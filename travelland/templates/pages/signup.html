@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% load static %}
+ {% block content %}   
+ <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<section class="contact-section">
+            <div class="container">
+                <div class="d-none d-sm-block mb-5 pb-4">
+ 
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="contact-title">Welcome</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action="#" method="post" id="contactForm" novalidate="novalidate">
+                            
+                            <div class="row">
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="firstname" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter firstname'" placeholder="firstname">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="lastname" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter lastname'" placeholder="lastname">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="form-check">
+                                        Gender <br/>
+                                        <input type="radio" class="form-check-input"value="male" name="gender"><label class="form-check-label" for="exampleRadios2">
+                            }
+   Male
+  </label> &nbsp; &nbsp; &nbsp;
+
+   <input type="radio" value="female"class="form-check-input" name="gender"> <label class="form-check-label" for="exampleRadios2">
+   Female
+  </label><br/>
+                                    </span>
+                                </div>
+
+                                <div class="col-sm-8">
+                                    <br/>
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="password" id="myInput" type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter password'" placeholder="password"><input type="checkbox" onclick="myFunction()">Show Password
+
+                                                   <script type="text/javascript">function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+            
+        </script>
+                                    </div>
+                                </div>
+
+                               
+                                   
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button button-contactForm boxed-btn">Register</button>
+                            </div>
+                               <div class="form-group mt-3">
+                                Don't Have an account? <a href="{% url 'signup' %}">SignUp</a>
+                            </div>
+                        
+
+                        </form>
+                 
+                    </div>
+                      <div class="col-lg-3 offset-lg-1">
+                         <div class="col-12">
+                        <h3 class="contact-title">Login With</h3>
+                    </div>
+                        <div class="media contact-info">
+                         
+                            <div class="form-group mt-3">
+                             <a class="btn btn-primary" href="#" role="button"><i class="fa fa-facebook"></i> facebook</a>
+                            </div>
+                        </div>
+                        <div class="media contact-info">
+                         
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
