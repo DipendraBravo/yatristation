@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-    <main>
-	
-	   <div class="slider_area">
+
+{% extends 'base.html' %} {% load static %}
+{% block head %}
+    <title>YatriStation</title>
+{% endblock %}
+ {% block content %}
+      <!-- slider_area_start -->
+   <div class="slider_area">
         <div class="slider_active owl-carousel">
             <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
                 <div class="container">
@@ -45,7 +47,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- slider_area_end -->
 
@@ -85,97 +86,7 @@
     </div>
     <!-- where_togo_area_end  -->
     
-    <!-- popular_destination_area_start  -->
-    <div class="popular_destination_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb_70">
-
-                        <h1>List of Guide Person</h1>
-                        {% for guide_person in guide_persons %}
-                            Image: <img src="{{guide_person.photo_main}}"><br/>     
-                            Name: {{guide_person.name}}<br/>        
-                            Address: {{guide_person.address}}<br/>
-                            Contact: {{guide_person.contact}}
-                        {% endfor %}
-                        <h3>Popular Destination</h3>
-                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/1.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/2.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/3.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/4.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/5.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="img/destination/6.png" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- popular_destination_area_end  -->
-
+  
     <!-- newletter_area_start  -->
     <div class="newletter_area overlay">
         <div class="container">
@@ -407,8 +318,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
