@@ -10,7 +10,4 @@ urlpatterns = [
     path('blog', views.blog, name='blog'),
     path('contacts', views.contacts, name='contacts'),
     path('single_blog', views.single_blog, name='single_blog'),
-     path('signin', views.signin, name='signin'),
-    path('signup',views.signup,name='signup'),
-    
 ]

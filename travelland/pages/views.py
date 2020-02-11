@@ -1,15 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
 from .models import Slider
 from .models import Sponsor
 from .models import PopularPlaces
 
+
 # Create your views here.
-def index(request):
-    return render(request, 'pages/index.html')
 
 
 def about(request):
-	return render(request, 'pages/about.html')
+    return render(request, 'pages/about.html')
+
 
 
 def destination(request):
@@ -31,13 +33,6 @@ def contacts(request):
 def single_blog(request):
 	return render(request, 'pages/single_blog.html')
 
-
-def signin(request):
-    return render(request, 'pages/signin.html')
-
-
-def signup(request):
-    return render(request, 'pages/signup.html')
 
 
 def index(request):

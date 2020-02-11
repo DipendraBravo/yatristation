@@ -1,9 +1,11 @@
+
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <main>
+<main>
 	
-	   <div class="slider_area">
+      <!-- slider_area_start -->
+   <div class="slider_area">
         <div class="slider_active owl-carousel">
             <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
                 <div class="container">
@@ -45,7 +47,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- slider_area_end -->
 
@@ -93,12 +94,6 @@
                     <div class="section_title text-center mb_70">
 
                         <h1>List of Guide Person</h1>
-                        {% for guide_person in guide_persons %}
-                            Image: <img src="{{guide_person.photo_main}}"><br/>     
-                            Name: {{guide_person.name}}<br/>        
-                            Address: {{guide_person.address}}<br/>
-                            Contact: {{guide_person.contact}}
-                        {% endfor %}
                         <h3>Popular Destination</h3>
                         <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
                     </div>
@@ -228,7 +223,7 @@
                     <div class="single_place">
                         <div class="thumb">
                             <img src="{{popularplace.photo.url}}" alt="">
-                            <a href="#" class="prise">$800</a>
+                            <a href="#" class="prise">${{popularplace.price}}</a>
                         </div>
                         <div class="place_info">
                             <a href="destination_details.html"><h3>{{popularplace.name}}</h3></a>
@@ -407,8 +402,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
