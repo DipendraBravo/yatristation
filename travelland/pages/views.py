@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth.models import User, auth
 from .models import Slider
 from .models import Sponsor
 from .models import PopularPlaces
@@ -10,12 +8,11 @@ from .models import PopularPlaces
 
 
 def about(request):
-    return render(request, 'pages/about.html')
-
+	return render(request, 'pages/about.html')  
 
 
 def destination(request):
-	return render(request, 'pages/destination.html')
+	return render(request, 'pages/destination.html')  
 
 
 def destination_details(request):
@@ -32,7 +29,6 @@ def contacts(request):
 
 def single_blog(request):
 	return render(request, 'pages/single_blog.html')
-
 
 
 def index(request):
