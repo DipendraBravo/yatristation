@@ -27,3 +27,13 @@ class PopularPlaces(models.Model):
 def __str__(self):
     return self.name
 
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=200)
+    rating = models.IntegerField()
+    location = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    hotelphoto = models.ImageField(upload_to="photos/sponsor", blank=True)
+def __str__(self):
+    return self.name
+

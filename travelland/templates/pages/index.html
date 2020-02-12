@@ -376,8 +376,8 @@
 
 
    
+ 
 
-{% for adv in sponsor %}
     <div class="recent_trip_area">
         <div class="container">
             <div class="row justify-content-center">
@@ -387,7 +387,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+           
+            <div class="row" ">
+                {% for adv in sponsor %}
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
@@ -403,9 +405,49 @@
                         </div>
                     </div>
                 </div>
+                 {% endfor %}
             </div>
+        
         </div>
     </div>
-{% endfor %}
+   
+
+    <div class="recent_trip_area">
+ 
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Hotels in Nepal </h3>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="row">
+                   {% for hotel in hotels %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_trip">
+                        <div class="thumb">
+                            <img src="{{hotel.hotelphoto.url}}" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="date">
+                                <span>{{ hotel.name }}</span>
+                                <span>Location:{{hotel.location}}</span>
+                                <span>Rating:{{ hotel.rating }} star</span>
+                            </div>
+                            <a href="#">
+                                <h3>{{hotel.description}}</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                   {% endfor %}
+            </div>
+                
+        </div>
+ 
+    </div>
+
     </main>
 {% endblock %}
