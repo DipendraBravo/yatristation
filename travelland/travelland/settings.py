@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'Images.apps.ImagesConfig',
     'form.apps.FormConfig',
+    'aboutus.apps.AboutusConfig',
 ]
 
 MIDDLEWARE = [
