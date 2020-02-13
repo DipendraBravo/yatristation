@@ -1,0 +1,23 @@
+img {
+  max-width: 100%;
+}
+
+.card {
+  position: relative;
+
+  background: #333;
+  width: 40%;
+  height: 70vh;
+  border-radius: 6px;
+  padding: 2rem;
+  color: #aaa;
+  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+    0 0 1rem rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.cont {
+  display: flex;
+  justify-content:space-around;
+  flex-direction: row;
+  flex-flow: wrap;
+}

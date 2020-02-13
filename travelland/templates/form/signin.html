@@ -11,7 +11,9 @@
                     </div>
                     <div class="col-lg-8">
                         <form  action="login" method="POST" >
+
                                  {% csrf_token %}
+
                             <div class="row">
                                 
                                 <div class="col-sm-6">
@@ -24,6 +26,7 @@
                                         <input class="form-control valid" name="password" id="myInput" type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter password'" placeholder="password"><input type="checkbox" onclick="myFunction()">Show Password
 
                                                    <script type="text/javascript">function myFunction() {
+                            }
   var x = document.getElementById("myInput");
   if (x.type === "password") {
     x.type = "text";

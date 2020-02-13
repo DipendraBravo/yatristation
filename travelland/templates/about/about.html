@@ -1,0 +1,321 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .our-team-main
+{
+	width:100%;
+	height:auto;
+	border-bottom:5px #323233 solid;
+	background:#fff;
+	text-align:center;
+	border-radius:10px;
+	overflow:hidden;
+	position:relative;
+	transition:0.5s;
+	margin-bottom:28px;
+}
+
+
+.our-team-main img
+{
+	border-radius:50%;
+	margin-bottom:20px;
+	width: 90px;
+}
+
+.our-team-main h3
+{
+	font-size:20px;
+	font-weight:700;
+}
+
+.our-team-main p
+{
+	margin-bottom:0;
+}
+
+.team-back
+{
+	width:100%;
+	height:auto;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:5px 15px 0 15px;
+	text-align:left;
+	background:#fff;
+
+}
+
+.team-front
+{
+	width:100%;
+	height:auto;
+	position:relative;
+	z-index:10;
+	background:#fff;
+	padding:15px;
+	bottom:0px;
+	transition: all 0.5s ease;
+}
+
+.our-team-main:hover .team-front
+{
+	bottom:-200px;
+	transition: all 0.5s ease;
+}
+
+.our-team-main:hover
+{
+	border-color:#777;
+	transition:0.5s;
+}
+
+</style>
+    <div class="bradcam_area bradcam_bg_3">
+        <div class="container">            
+            <div class="row">
+                <div class="col-xl-12">                   
+                    <div class="bradcam_text text-center">
+                        <h3>About Us</h3>
+                        <p>Travelling refers for best action</p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    
+    <div class="about_story">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="story_heading">
+                        <h3>Our Story</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-11 offset-lg-1">
+                        {% for ourstory in ourstories %}
+                            <div class="story_info">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <p>{{ourstory.ourstorydescription}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="story_thumb">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="thumb padd_1">
+                                            <img src="{{ourstory.storythumbphoto.url}}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {%  endfor %}
+                        {% for tourplan in tourplans %}
+                            <div class="counter_wrap">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="single_counter text-center">
+                                            <h3  class="counter">{{tourplan.successfultour}}</h3>
+                                            <p>Tour has done successfully</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="single_counter text-center">
+                                            <h3 class="counter">{{tourplan.yeartourarrange}}</h3>
+                                            <p>Yearly tour arrange</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="single_counter text-center">
+                                            <h3 class="counter">{{tourplan.happyclient}}</h3>
+                                            <p>Happy Clients</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="about_story">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="story_heading">
+                        <h3>Project Partners</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div class="cont">
+    {% for projectpartner in projectpartners %}
+    <div class="card" style="width: 30%">
+        <div class="card__image-container">
+            <img class="card__image" src="{{projectpartner.projectpartnerphoto.url}}" alt="">
+        </div>
+        <div class="card__content">
+            <h1 class="card__title">{{projectpartner.projectpartnername}}</h1>
+            <p>{{projectpartner.projectpartnerdesc}}</p>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+<h1 class="text-center">OUR TEAM</h1>
+	<div class="container">
+	<div class="row">
+
+	<!--team-1-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="/static/img/team/dipendra.jpg" class="img-fluid" />
+	<h3>Dipendra Tamang</h3>
+	<p>Full Stack</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-1-->
+
+	<!--team-2-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+	<h3>Suman Dhungana</h3>
+	<p>Web Designer</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-2-->
+
+	<!--team-3-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="http://placehold.it/110x110/607d8b/fff?text=Dilip" class="img-fluid" />
+	<h3>Nobel Kp</h3>
+	<p>Designer</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-3-->
+
+	<!--team-4-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="http://placehold.it/110x110/4caf50/fff?text=Dilip" class="img-fluid" />
+	<h3>Kajol Ramtel</h3>
+	<p>Content manager</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-4-->
+
+	<!--team-5-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="http://placehold.it/110x110/e91e63/fff?text=Dilip" class="img-fluid" />
+	<h3>Sangam Pandey</h3>
+	<p>Influencer</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-5-->
+
+	<!--team-6-->
+	<div class="col-lg-4">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="sdasd" class="img-fluid" />
+	<h3>Rashmi Neupane</h3>
+	<p>Frontend</p>
+	</div>
+
+	<div class="team-back">
+	<span>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque penatibus et magnis dis parturient montes,
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+	natoque.
+	</span>
+	</div>
+
+	</div>
+	</div>
+	<!--team-6-->
+
+
+
+	</div>
+	</div>
+
+  {%  endblock %}
