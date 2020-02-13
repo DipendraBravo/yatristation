@@ -123,7 +123,8 @@
     </div>
     <!-- newletter_area_end  -->
 
-    <div class="popular_places_area">
+
+ <div class="popular_places_area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -134,39 +135,34 @@
                 </div>
             </div>
             <div class="row">
-                {% for popularplace in popularplaces %}
+                     {% for drunks in drunk %}
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="{{popularplace.photo.url}}" alt="">
+                            <img src="{{drunks.photo.url}}" alt="">
                             <a href="#" class="prise">$800</a>
                         </div>
                         <div class="place_info">
-                            <a href="destination_details.html"><h3>{{popularplace.name}}</h3></a>
-                            <p>{{popularplace.country}}</p>
+                            <a href="destination_details.html"><h3>{{drunks.name}}</h3></a>
+                            <p>{{drunks.country}}</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
                                      <i class="fa fa-star"></i>
-                                     <a href="#">({{popularplace.review}} Review)</a>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">({{drunks.review}} Review)</a>
                                 </span>
                                 <div class="days">
                                     <i class="fa fa-clock-o"></i>
-                                    <a href="#">{{popularplace.day_count}}</a>
+                                    <a href="#">{{drunks.day_count}}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-                
-                
-              
-                
-               
             <div class="row">
                 <div class="col-lg-12">
                     <div class="more_place_btn text-center">
@@ -176,7 +172,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="video_area video_bg overlay">
         <div class="container">
