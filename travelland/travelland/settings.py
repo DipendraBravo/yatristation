@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'Images.apps.ImagesConfig',
     'form.apps.FormConfig',
     'aboutus.apps.AboutusConfig',
+    'destination.apps.DestinationConfig',
+    'destination_detail.apps.DestinationDetailConfig',
 ]
 
 MIDDLEWARE = [

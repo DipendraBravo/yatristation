@@ -11,12 +11,12 @@ from .models import Hotel
 # 	return render(request, 'pages/about.html')  
 
 
-def destination(request):
-	return render(request, 'pages/destination.html')  
+# def destination(request):
+# 	return render(request, 'pages/destination.html')  
 
 
-def destination_details(request):
-	return render(request, 'pages/destination_details.html')
+# def destination_details(request):
+# 	return render(request, 'pages/destination_details.html')
 
 
 def blog(request):

@@ -12,23 +12,35 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-9">
-                    <div class="destination_info">
+                    {% for destination_detail in destination_details %}
+                    <div class="destination_info">                       
                         <h3>Description</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                        <p>{{destination_detail.description}}</p>  
                         <div class="single_destination">
-                            <h4>Day-01</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
-                        <div class="single_destination">
-                            <h4>Day-02</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
-                        <div class="single_destination">
-                            <h4>Day-03</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>Day-{{destination_detail.day1}}</h4>
+                            <p>{{destination_detail.day1description}}</p>
+                            <h4>Day-{{destination_detail.day2}}</h4>
+                            <p>{{destination_detail.day2description}}</p>
+                            <h4>Day-{{destination_detail.day3}}</h4>
+                            <p>{{destination_detail.day3description}}</p>
+                            <h4>Day-{{destination_detail.day4}}</h4>
+                            <p>{{destination_detail.day4description}}</p>
+                            <h4>Day-{{destination_detail.day5}}</h4>
+                            <p>{{destination_detail.day5description}}</p>
+                            <h4>Day-{{destination_detail.day6}}</h4>
+                            <p>{{destination_detail.day6description}}</p>
+                            <h4>Day-{{destination_detail.day7}}</h4>
+                            <p>{{destination_detail.day7description}}</p>
+                            <h4>Day-{{destination_detail.day8}}</h4>
+                            <p>{{destination_detail.day8description}}</p>
+                            <h4>Day-{{destination_detail.day9}}</h4>
+                            <p>{{destination_detail.day9description}}</p>
+                            <h4>Day-{{destination_detail.day10}}</h4>
+                            <p>{{destination_detail.day10description}}</p>
+
                         </div>
                     </div>
+                    {% endfor %}
                     <div class="bordered_1px"></div>
                     <div class="contact_join">
                         <h3>Contact for join</h3>
