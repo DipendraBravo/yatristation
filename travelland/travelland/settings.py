@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'Images.apps.ImagesConfig',
     'form.apps.FormConfig',
+    'user.apps.UserConfig',
+    'blog.apps.BlogConfig',
     'aboutus.apps.AboutusConfig',
     'destination.apps.DestinationConfig',
     'destination_detail.apps.DestinationDetailConfig',
+
 ]
 
 MIDDLEWARE = [

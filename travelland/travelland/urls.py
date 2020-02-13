@@ -15,16 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings 
+from django.conf import settings
 from django.conf.urls.static import static
-
-
+admin.site.site_header = " YatriStation Administration"
+admin.site.site_title = "YatriStation Administration"
+admin.site.index_title = "Welcome to Yatri "
 
 urlpatterns = [
-    path('', include('pages.urls')),
-    path('about/',include('aboutus.urls')),
-    path('account/', include('form.urls')),
-    path('destination/', include('destination.urls')),
-    path('destination_detail/', include('destination_detail.urls')),
-    path('admin/', admin.site.urls),   
- ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+                  path('', include('pages.urls')),
+                  path('account/', include('form.urls')),
+                  path('about/', include('aboutus.urls')),
+                  path('user/', include('user.urls')),
+                  path('blog/', include('blog.urls')),
+                  path('destination/', include('destination.urls')),
+                  path('destination_detail/', include('destination_detail.urls')),
+                  path('admin/', admin.site.urls),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+

@@ -4,31 +4,16 @@ from .models import Sponsor
 from .models import PopularPlaces
 from .models import Hotel
 
+
 # Create your views here.
 
 
-# def about(request):
-# 	return render(request, 'pages/about.html')  
-
-
-# def destination(request):
-# 	return render(request, 'pages/destination.html')  
-
-
-# def destination_details(request):
-# 	return render(request, 'pages/destination_details.html')
-
-
-def blog(request):
-	return render(request, 'pages/blog.html')
-
-
 def contacts(request):
-	return render(request, 'pages/contacts.html')
+    return render(request, 'pages/contacts.html')
 
 
 def single_blog(request):
-	return render(request, 'pages/single_blog.html')
+    return render(request, 'pages/single_blog.html')
 
 
 def index(request):
@@ -36,5 +21,5 @@ def index(request):
     sponsors = Sponsor.objects.all()
     popularplaces = PopularPlaces.objects.all()
     hotels = Hotel.objects.all()
-    return render(request, 'pages/index.html', {'sliders': slider,'sponsor': sponsors,'popularplaces': popularplaces, 'hotels': hotels})
-
+    return render(request, 'pages/index.html',
+                  {'sliders': slider, 'sponsor': sponsors, 'popularplaces': popularplaces, 'hotels': hotels})
