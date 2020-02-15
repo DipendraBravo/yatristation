@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-
+from user.models import Notification
 
 # Create your views here.
 
 def login(request):
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -14,7 +15,9 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect("userprofile")
+            n = Notification.objects.filter(user=request.user,viewed=False)
+            return render_to_response("userprofile",{'notifications':n})
+
         else:
             messages.info(request, 'invalid credentials')
             return redirect("login")

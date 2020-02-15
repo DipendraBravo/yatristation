@@ -3,6 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from .models import UserProfile
+from django.shortcuts import render_to_response
+from django.http import HttpResponstedRedirect
+from .models import Notification
 
 
 # Create your views here.
@@ -39,3 +42,14 @@ def show_blog(request):
         return redirect('/')
     else:
         return render(request, 'blog/blog.html', {'title': 'Blog| YatriStation', 'blog': all_blog})
+
+def show_notification(request, Notification_id):
+    n = Notification.objects.get(id=notification_id)
+    return render_to_response('user/user.html',{'notification':n})
+
+def delete_notification(request, notification_id):
+    n = Notification.objects.get(id=notification_id)
+    n.viewed = True
+    n.save()
+
+    return HttpResponstedRedirect('/account/login')

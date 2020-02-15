@@ -2,6 +2,8 @@ from datetime import date
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 # Create your models here.
@@ -27,3 +29,17 @@ class Post(models.Model):
 
 def __str__(self):
     return self.title
+
+class Notification(models.Model):
+    title = models.CharField(max_length=250)
+    message = models.TextField()
+    viewed = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+@receiver(post_save, sender=User)
+def create_welcome_message(sender,**kwargs):
+    if kwargs.get('Created',False):
+        Notification.objects.Create(user=kwargs.get('instance'),
+                                    title="Welcome To YatriStation",
+                                    message="Thanks gor signing up!")
+

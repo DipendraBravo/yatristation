@@ -1,4 +1,4 @@
-
+  
 {% extends 'base.html' %} {% load static %}
 {% block head %}
     <title>YatriStation</title>
@@ -36,13 +36,18 @@
           </div>
             <div class="panel panel-default">
             <div class="panel-heading">Address</div>
-            <div class="panel-body"><a href="http://bootnipets.com">Address</a></div>
+            <div class="panel-body"><a href="http://bootnipets.com">{{notification.title }}</a></div>
           </div>
+           <div class="panel panel-default">
+            <div class="panel-heading">notification message</div>
+            <div class="panel-body"><a href="/notification/delete/{{notification.id}}">Marks as read</a></div>
+          </div>
+
 
 
           <ul class="list-group">
             <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong></strong></span> 125</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
@@ -61,6 +66,7 @@
                 <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
                 &nbsp;   &nbsp;   &nbsp;<li><a data-toggle="tab" href="#messages">Guider</a></li>
                 &nbsp;   &nbsp;   &nbsp; <li><a data-toggle="tab" href="#settings">ASD</a></li>
+                &nbsp;   &nbsp;   &nbsp; <li><a data-toggle="tab" href="#notification">notification</a></li>
               </ul>
 
 
@@ -226,7 +232,20 @@
               	</form>
               </div>
 
-              </div><!--/tab-pane-->
+              </div>
+                <div class="tab-pane active" id="notification">
+                <hr>
+               <h2>  {{full_name}} your are now logged in</h2>
+               {% if notifications.count > 0 %}
+               <h3> Notifications</h3>
+                {% for n in notification %}
+                <p> <a href="/notification/show/{{n.id}}">{{n.title}}</a></p>
+                {% endfor %}
+                {% endif %}
+              <hr>
+
+             </div><!--/tab-pane-->
+           <!--/tab-pane-->
           </div><!--/tab-content-->
 
         </div><!--/col-9-->
