@@ -113,7 +113,7 @@
                                     <a href="#" class="prise">${{destination.price}}</a>
                                 </div>
                                 <div class="place_info">
-                                    <a href="{% url 'destination_detail' %}"><h3>{{destination.name}}</h3></a>
+                                    <a href="dest/{{ destination.id }}"><h3>{{destination.name}}</h3></a>
                                     <p>{{destination.country}}</p>
                                     <div class="rating_days d-flex justify-content-between">
                                         <span class="d-flex justify-content-center align-items-center">
