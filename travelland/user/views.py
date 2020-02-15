@@ -2,13 +2,28 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
+from .models import UserProfile
 
 
 # Create your views here.
 
 
-def userprofile(request):
-    return render(request, 'user/user.html')
+def userprofile(request,*args, **kwargs):
+
+    userone = UserProfile.objects.filter(user_id=request.user.id).all()
+    user = User()
+
+    if request.method == 'POST':
+        gender = request.POST['gender']
+        contact = request.POST['contact']
+        address = request.POST['address']
+        guider = request.POST['guider']
+        update = UserProfile(gender=gender, contact=contact, address=address,guider=guider)
+        update.user = request.user
+        update.save()
+
+
+    return render(request, 'user/user.html', {'userone':userone})
 
 
 def show_blog(request):
