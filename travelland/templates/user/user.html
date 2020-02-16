@@ -1,4 +1,3 @@
-  
 {% extends 'base.html' %} {% load static %}
 {% block head %}
     <title>YatriStation</title>
@@ -32,16 +31,13 @@
             {% for userones in userone %}
 
             <div class="panel-body"><a href="http://bootnipets.com">{{ userones.contact }}</a></div>
-            {% endfor %}
+         
           </div>
             <div class="panel panel-default">
             <div class="panel-heading">Address</div>
-            <div class="panel-body"><a href="http://bootnipets.com">{{notification.title }}</a></div>
+            <div class="panel-body"><a href="http://bootnipets.com">{{ userones.address}}</a></div>
           </div>
-           <div class="panel panel-default">
-            <div class="panel-heading">notification message</div>
-            <div class="panel-body"><a href="/notification/delete/{{notification.id}}">Marks as read</a></div>
-          </div>
+             {% endfor %}
 
 
 
@@ -61,6 +57,7 @@
           </div>
 
         </div><!--/col-3-->
+      </div>
     	<div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
@@ -110,6 +107,7 @@
               	</form>
 
               <hr>
+            
 
              </div><!--/tab-pane-->
              <div class="tab-pane" id="messages">
@@ -162,86 +160,143 @@
              <div class="tab-pane" id="settings">
 
 
+                  
                   <hr>
-                  <form class="form" action="#" method="post" id="registrationForm" enctype="multipart/form-data">
+                  <form class="form" action="homestay" method="post" id="registrationForm" enctype="multipart/form-data">
                       {% csrf_token %}
+                      <div class="form-group"> 
+                      <div class="col-xs-6"> 
+                              <h4>Get Estimation</h4><br/>
+                                <select name="getestimation"><i class="far fa-caret-square-down"></i>
+                                  <option value="0">___Estimate___</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                </select>
+                          <br/>
+                        </div>
+                      </div><br/>
                       <div class="form-group">
 
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                            <label for="homestay"><h4>Home Stay Name</h4></label>
+                              <input type="text" class="form-control" name="homestayname" id="homestay" placeholder="Home stay name">
                           </div>
                       </div>
 
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <label for="phone"><h4>Popular Amenities</h4></label><br/>
+                        
+                              <textarea class="form-control w-100" name="popularamenitities" cols="30" rows="9" placeholder="Describe Your popularamenitities"></textarea>
                           </div>
                       </div>
                       <div class="form-group">
-
                           <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                             <label for="mobile"><h4>Price</h4></label>
+                              <input type="text" class="form-control" name="price" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
                           </div>
                       </div>
                       <div class="form-group">
 
+                           <div class="col-xs-6">
+                            <label for="description"><h4>Price Details</h4></label>
+                              <textarea class="form-control w-100" name="pricedetail" id="message" cols="30" rows="9" placeholder="Describe Your blog"></textarea>
+                      </div>
+                      </div>
+                      <div class="form-group">
                           <div class="col-xs-6">
                               <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                              <input type="text" class="form-control" name="location" placeholder="somewhere" title="enter a location">
                           </div>
                       </div>
                       <div class="form-group">
 
                           <div class="col-xs-6">
-                              <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                              <label for="email"><h4>Pan Number</h4></label>
+                              <input type="text" class="form-control" name="pannumber"placeholder="somewhere" >
                           </div>
                       </div>
                       <div class="form-group">
 
-                          <div class="col-xs-6">
-                            <label for="password2"><h4>Verify</h4></label>
-                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                          </div>
+                           <div class="col-xs-6">
+                            <label for="description"><h4>Food and Drinks</h4></label>
+                              <textarea class="form-control w-100" name="foodanddrinks" id="message" cols="30" rows="9" placeholder="Describe Your blog"></textarea>
                       </div>
+                      </div>
+                      <div class="form-group">
+
+                           <div class="col-xs-6">
+                            <label for="description"><h4>Guest Services</h4></label>
+                              <textarea class="form-control w-100" name="guestservice"  cols="30" rows="9" placeholder="Describe Your blog"></textarea>
+                      </div>
+                      </div>
+                       <div class="form-group">
+
+                           <div class="col-xs-6">
+                            <label for="description"><h4>Outdoors</h4></label>
+                              <textarea class="form-control w-100" name="outdoors" cols="30" rows="9" placeholder="Describe Your blog"></textarea>
+                      </div>
+                      </div>
+                      <div class="form-group">
+
+                           <div class="col-xs-6">
+                            <label for="description"><h4>Accessibility</h4></label>
+                              <textarea class="form-control w-100" name="accessibility" cols="30" rows="9" placeholder="Describe Your blog"></textarea>
+                      </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                            <label for="file"><h4>HomeStay Picture</h4></label>
+                              <input type="file"  name="picture_main"  >
+                          </div>
+                        </div>
+                          <div class="form-group">
+                          <div class="col-xs-6">
+                            <label for="file"><h4>Room1 Pic</h4></label>
+                              <input type="file" class="form-control" name="room1pic"  >
+                          </div>
+                        </div>
+                          <div class="form-group">
+                          <div class="col-xs-6">
+                            <label for="file"><h4>Room2 Pic</h4></label>
+                              <input type="file" class="form-control" name="room2pic"  >
+                          </div>
+                        </div>
+                          <div class="form-group">
+                          <div class="col-xs-6">
+                            <label for="file"><h4>Outdoor pic</h4></label>
+                              <input type="file" class="form-control" name="outdoorpic"  >
+                          </div>
+                        </div>
+                          <div class="form-group">
+                          <div class="col-xs-6">
+                            <label for="file"><h4>Citizenship Front</h4></label>
+                              <input type="file" class="form-control" name="citizenshipfront"  >
+                          </div>
+                        </div>
+                          <div class="form-group">
+
+                          <div class="col-xs-6">
+                            <label for="file"><h4>Citizenship Back</h4></label>
+                              <input type="file" class="form-control" name="citizenshipback"  >
+                          </div>
+                        </div>
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                              	<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                  <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
                             </div>
                       </div>
-              	</form>
+                     
+                </form>
               </div>
 
               </div>
                 <div class="tab-pane active" id="notification">
-                <hr>
-               <h2>  {{full_name}} your are now logged in</h2>
-               {% if notifications.count > 0 %}
-               <h3> Notifications</h3>
-                {% for n in notification %}
-                <p> <a href="/notification/show/{{n.id}}">{{n.title}}</a></p>
-                {% endfor %}
-                {% endif %}
+               
               <hr>
 
              </div><!--/tab-pane-->

@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from .models import UserProfile
-from django.shortcuts import render_to_response
-from django.http import HttpResponstedRedirect
-from .models import Notification
+from .models import HomeStay
+from .models import Book 
+
+
 
 
 # Create your views here.
@@ -43,13 +44,64 @@ def show_blog(request):
     else:
         return render(request, 'blog/blog.html', {'title': 'Blog| YatriStation', 'blog': all_blog})
 
-def show_notification(request, Notification_id):
-    n = Notification.objects.get(id=notification_id)
-    return render_to_response('user/user.html',{'notification':n})
+def homestay(request,*args,**kwargs):
+    homestay = HomeStay.objects.all()
+    user = User()
+    if request.method == 'POST':
+        getestimation = request.POST['getestimation']
+        homestayname = request.POST['homestayname']
+        popularamenitities = request.POST['popularamenitities']
+        price = request.POST['price']
+        pricedetail = request.POST['pricedetail']
+        location = request.POST['location']
+        pannumber = request.POST['pannumber']
+        foodanddrinks = request.POST['foodanddrinks']
+        guestservice = request.POST['guestservice']
+        outdoors = request.POST['outdoors']
+        accessibility = request.POST['accessibility']
+        homestaypicture = request.FILES['picture_main']
+        room1pic = request.FILES['room1pic']
+        room2pic = request.FILES['room2pic']
+        outdoorpic = request.FILES['outdoorpic']
+        citizenshipfront = request.FILES['citizenshipfront']
+        citizenshipback = request.FILES['citizenshipback']
+        post = HomeStay(getestimation=getestimation, homestayname=homestayname,
+        popularamenitities=popularamenitities,price=price, pricedetail=pricedetail, location=location, 
+        pannumber=pannumber, foodanddrinks=foodanddrinks, guestservice=guestservice,
+        outdoors=outdoors, accessibility=accessibility,homestaypicture=homestaypicture,
+        room1pic=room1pic, room2pic=room2pic,outdoorpic=outdoorpic, 
+        citizenshipfront=citizenshipfront,
+        citizenshipback=citizenshipback)
+        post.user = request.user
+        post.save()
+        return redirect('/')
+    else:
+        return render(request, 'user/homestay.html', {'title': 'HomeStay| YatriStation', 'homestay': homestay})
 
-def delete_notification(request, notification_id):
-    n = Notification.objects.get(id=notification_id)
-    n.viewed = True
-    n.save()
+def homestay_detail(request,id):
+    homestay_detail = HomeStay.objects.filter(id=id).all()
+    return render(request,'user/homestaydetails.html', {'dd': homestay_detail})
 
-    return HttpResponstedRedirect('/account/login')
+def book(request,*args,**kwargs):
+    # homestayid = HomeStay()
+    user = User()
+    if request.method == 'POST':
+        guestname = request.POST['guestname']
+        guestcontact = request.POST['guestcontact']
+        guestemail = request.POST['guestemail']
+        startdate = request.POST['startdate']
+        enddate = request.POST['enddate']
+        noofguest = request.POST['noofguest']
+        reasonforbooking = request.POST['reasonforbooking']
+        update = Book(guestname=guestname, guestcontact=guestcontact, guestemail=guestemail,
+        startdate=startdate,enddate=enddate,noofguest=noofguest,reasonforbooking=reasonforbooking)
+        update.user = request.user
+        # update.homestayid = request.homestayid
+        update.save()
+
+        return redirect('/')
+    else:
+         return render(request, 'user/book.html')
+ 
+
+

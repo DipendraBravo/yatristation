@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Welcome For Booking</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-contact contact_form" action='book' method="post" >
+                        	{% csrf_token %}
+                            <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Name</h2>
+                                        <input class="form-control valid" type="text" name="guestname" placeholder = "Enter Name">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Contact</h2>
+                                        <input class="form-control valid" name="guestcontact" type="text" placeholder = "Enter Contact">
+                                    </div>
+                                </div>
+
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Email</h2>
+                                        <input class="form-control valid" name="guestemail" type="email" placeholder = "Enter email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Start date</h2>
+                                        <input class="form-control valid" name="startdate" type="date" placeholder = "Enter startdate">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>EndDate</h2>
+                                        <input class="form-control valid" type="date" name="enddate" placeholder = "Enter enddate">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Number of Guest</h2>
+                                        <input class="form-control valid" name="noofguest" type="text" placeholder = "Enter number of guest">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6">
+                                    <div class="form-group">
+                                    	<h2>Reason for Booking</h2>
+                                    	<textarea class="form-control w-100" name="reasonforbooking"  cols="30" rows="9" placeholder="Reason for booking"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                                <br/>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    </div>
+                </div>
+                    
+{% else %}
+Do login for Booking Purpose
+ <p>You are not logged in</p>
+  <a href="{% url 'login' %}" class="boxed-btn4">login</a>
+{% endif %}
+{% endblock %}
