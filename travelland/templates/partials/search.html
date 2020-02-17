@@ -1,10 +1,15 @@
+{% load static %}
 <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="serch_form">
-            <input type="text" placeholder="Search" >
+        	<form action="search" method="post">
+        		{% csrf_token %}
+            <input type="text" placeholder="Search here" name="srh">
             <button type="submit">search</button>
+            </form>
         </div>
       </div>
     </div>
 </div>
+<br><br>

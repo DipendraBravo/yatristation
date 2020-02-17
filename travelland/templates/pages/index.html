@@ -87,89 +87,61 @@
     </div>
     <!-- where_togo_area_end  -->
 
-    <!-- popular_destination_area_start  -->
-    <div class="popular_destination_area">
+ <div class="popular_places_area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb_70">
-                        <h3>Popular Destination</h3>
+                        <h3>Popular Places</h3>
                         <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
+                     {% for popularplace in popularplaces %}
                 <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
+                    <div class="single_place">
                         <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
+
+
+                            <img src="{{popularplace.photo.url}}" alt="">
                             
+                        </div>
+                        <div class="place_info">
+                            <a href="destination_details.html"><h3>{{popularplace.name}}</h3></a>
+                            <p>{{popularplace.country}}</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">({{popularplace.review}} Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">{{popularplace.day_count}}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="media/photos/popularplaces/muktinath.jfif" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>
-                            
-                        </div>
+
+                {% endfor %}                      
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="#">More Places</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- popular_destination_area_end  -->
 
+
+   
     <!-- newletter_area_start  -->
     <div class="newletter_area overlay">
         <div class="container">
@@ -205,60 +177,6 @@
         </div>
     </div>
     <!-- newletter_area_end  -->
-
-
- <div class="popular_places_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb_70">
-                        <h3>Popular Places</h3>
-                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                     {% for popularplace in drunk %}
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_place">
-                        <div class="thumb">
-
-
-                            <img src="{{popularplace.photo.url}}" alt="">
-                            <a href="#" class="prise">${{popularplace.price}}</a>
-                        </div>
-                        <div class="place_info">
-                            <a href="destination_details.html"><h3>{{drunks.name}}</h3></a>
-                            <p>{{drunks.country}}</p>
-                            <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">({{drunks.review}} Review)</a>
-                                </span>
-                                <div class="days">
-                                    <i class="fa fa-clock-o"></i>
-                                    <a href="#">{{drunks.day_count}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {% endfor %}                      
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="more_place_btn text-center">
-                        <a class="boxed-btn4" href="#">More Places</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="video_area video_bg overlay">
         <div class="container">

@@ -10,4 +10,5 @@ urlpatterns = [
     path('homestay', views.homestay, name="homestay"),
     path('home/<int:id>', views.homestay_detail, name='homestay_detail'),
     path('home/book', views.book, name="book"),
+    
 ]

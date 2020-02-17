@@ -13,7 +13,7 @@ from .models import Book
 
 
 def userprofile(request,*args, **kwargs):
-
+    book =Book.objects.filter(user_id=request.user.id).all()
     userone = UserProfile.objects.filter(user_id=request.user.id).all()
     user = User()
 
@@ -27,7 +27,7 @@ def userprofile(request,*args, **kwargs):
         update.save()
 
 
-    return render(request, 'user/user.html', {'userone':userone})
+    return render(request, 'user/user.html', {'userone':userone,'books': book})
 
 
 def show_blog(request):

@@ -23,3 +23,11 @@ def index(request):
     hotels = Hotel.objects.all()
     return render(request, 'pages/index.html',
                   {'sliders': slider, 'sponsor': sponsors, 'popularplaces': popularplaces, 'hotels': hotels})
+def search(request):
+    val=request.POST['srh']
+    match=PopularPlaces.objects.filter(name__contains=val)
+    context={
+        'val':val,
+        'match':match,
+    }
+    return render(request,'pages/searchresult.html',context)

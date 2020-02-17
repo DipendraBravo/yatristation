@@ -61,9 +61,9 @@
     	<div class="col-sm-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                &nbsp;   &nbsp;   &nbsp;<li><a data-toggle="tab" href="#messages">Guider</a></li>
-                &nbsp;   &nbsp;   &nbsp; <li><a data-toggle="tab" href="#settings">ASD</a></li>
-                &nbsp;   &nbsp;   &nbsp; <li><a data-toggle="tab" href="#notification">notification</a></li>
+                &nbsp;   &nbsp;   &nbsp;<li><a data-toggle="tab" href="#messages">Booking</a></li>
+                &nbsp;   &nbsp;   &nbsp; <li><a data-toggle="tab" href="#settings">Become Host</a></li>
+               
               </ul>
 
 
@@ -111,52 +111,34 @@
 
              </div><!--/tab-pane-->
              <div class="tab-pane" id="messages">
-
-               <h2></h2>
-
-               <hr>
-                  <form class="form" action=" " method="post" id="registrationForm" enctype="multipart/form-data">
-                      {% csrf_token %}
-                      <div class="form-group">
-                            <div class="col-xs-6">
-                            <h4>Gender</h4> <input type="radio" value="male" name="gender">Male &nbsp; &nbsp; <input type="radio" value="female" name="gender"> Female
-                          </div>
-
-                      <div class="form-group">
-
-                          <div class="col-xs-6">
-                            <label for="contact"><h4>Contact No:</h4></label>
-                              <input type="text" class="form-control" name="contact" id="last_name" placeholder="Enter cell number">
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-
-                          <div class="col-xs-6">
-                              <label for="Address"><h4>Address</h4></label>
-                              <input type="text" class="form-control" name="address"  placeholder="Enter your address " >
-                          </div>
-                      </div>
-
+                <table border="1">
+                  <tr>
+                      <th>Guest Name</th>
+                      <th>Guest Contact</th>
+                      <th>Guest Email</th>
+                      <th>startdate</th>
+                      <th>enddate</th>
+                      <th>number of guest</th>
+                      <th>Reason for booking</th>
                       
-                      <div class="form-group">
+                  </tr>
+                  {% for book in books %}
+                    <tr>  
+                        <td>{{book.guestname}}</td>
+                        <td>{{book.guestcontact}}</td>
+                        <td>{{book.guestemail}}</td>
+                        <td>{{book.stardate}}</td>
+                        <td>{{book.enddate}}</td>
+                        <td>{{book.noofguest}}</td>
+                        <td>{{book.reasonforbooking}}</td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              
 
-                          <div class="col-xs-6">
-                              <label for="Address"><h4>Address</h4></label>
-                              <input type="text" class="form-control" name="guider"  placeholder="Enter your address " >
-                          </div>
-                      </div>
+               
 
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                      </div>
-              	</form>
-
-             </div></div><!--/tab-pane-->
+             </div><!--/tab-pane-->
              <div class="tab-pane" id="settings">
 
 
@@ -294,14 +276,11 @@
                 </form>
               </div>
 
-              </div>
-                <div class="tab-pane active" id="notification">
-               
-              <hr>
-
-             </div><!--/tab-pane-->
+              
+            <!--/tab-pane-->
            <!--/tab-pane-->
-          </div><!--/tab-content-->
+          </div>
+        </div><!--/tab-content-->
 
         </div><!--/col-9-->
     </div><!--/row-->
